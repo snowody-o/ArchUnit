@@ -21,6 +21,7 @@ import com.google.common.collect.ImmutableList;
 import com.tngtech.archunit.PublicAPI;
 import com.tngtech.archunit.base.DescribedPredicate;
 import com.tngtech.archunit.core.domain.JavaClass;
+import com.tngtech.archunit.core.domain.JavaType;
 
 import static com.tngtech.archunit.PublicAPI.Usage.ACCESS;
 import static com.tngtech.archunit.base.DescribedPredicate.equalTo;
@@ -29,6 +30,9 @@ import static com.tngtech.archunit.core.domain.Formatters.formatNamesOf;
 import static com.tngtech.archunit.core.domain.properties.HasName.Functions.GET_NAMES;
 
 public interface HasParameterTypes {
+
+    @PublicAPI(usage = ACCESS)
+    List<JavaType> getParameterTypes();
 
     @PublicAPI(usage = ACCESS)
     List<JavaClass> getRawParameterTypes();
